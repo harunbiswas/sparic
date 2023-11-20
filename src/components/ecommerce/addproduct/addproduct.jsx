@@ -1,33 +1,30 @@
-import React, { Fragment, useState } from 'react'
-import { Button, Card, Col, Form, Row } from 'react-bootstrap'
-import Pageheader from '../../../layouts/pageheader/pageheader'
-import Select from 'react-select'
-import SunEditor from 'suneditor-react'
-import { FilePond, registerPlugin } from 'react-filepond'
-import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
-import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
-import 'filepond/dist/filepond.min.css'
+import React, { Fragment, useState } from "react";
+import { Button, Card, Col, Row } from "react-bootstrap";
+import Select from "react-select";
+import Pageheader from "../../../layouts/pageheader/pageheader";
+// import SunEditor from 'suneditor-react'
+import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
+import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+import "filepond/dist/filepond.min.css";
+import { FilePond, registerPlugin } from "react-filepond";
 
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
+registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const Options = [
-  { value: 'Electronics', label: 'Electronics' },
-  { value: 'Fashion', label: 'Fashion' },
-  { value: 'Home Decor', label: 'Home Decor' },
-  { value: 'Furniture', label: 'Furniture' }
-]
+  { value: "Electronics", label: "Electronics" },
+  { value: "Fashion", label: "Fashion" },
+  { value: "Home Decor", label: "Home Decor" },
+  { value: "Furniture", label: "Furniture" },
+];
 export default function AddProduct() {
   const breadcrumbs = ["Ecommerce", "Add Product"];
   // sun editor
-  const htmlWithTableImages = '<center>  </center>'
-  const [files, setFiles] = useState([])
+  const htmlWithTableImages = "<center>  </center>";
+  const [files, setFiles] = useState([]);
 
   return (
     <Fragment>
-
-
-
       <Pageheader items={breadcrumbs} />
 
       <Row>
@@ -39,8 +36,12 @@ export default function AddProduct() {
             <Card.Body>
               <Row className="mb-4">
                 <label className="col-md-3 form-label">Product Name :</label>
-                <Col md={9} >
-                  <input type="text" className="form-control" placeholder="Product Name" />
+                <Col md={9}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Product Name"
+                  />
                 </Col>
               </Row>
               <div className="row mb-4">
@@ -52,23 +53,28 @@ export default function AddProduct() {
               <div className="row mb-4">
                 <label className="col-md-3 form-label">Categories :</label>
                 <Col md={9}>
-
-                  <Select classNamePrefix="Select2" options={Options} className="multi-select" 
-                    defaultValue={Options[0]} />
+                  <Select
+                    classNamePrefix="Select2"
+                    options={Options}
+                    className="multi-select"
+                    defaultValue={Options[0]}
+                  />
                 </Col>
               </div>
               <Row>
-                <label className="col-md-3 form-label mb-4">Product Description :</label>
+                <label className="col-md-3 form-label mb-4">
+                  Product Description :
+                </label>
                 <Col md={9} className="mb-4">
-
-                  <SunEditor />
+                  {/* <SunEditor /> */}
                 </Col>
               </Row>
 
               <Row>
-                <label className="col-md-3 form-label mb-4">Product Upload :</label>
+                <label className="col-md-3 form-label mb-4">
+                  Product Upload :
+                </label>
                 <Col md={9}>
-
                   <FilePond
                     files={files}
                     onupdatefiles={setFiles}
@@ -76,7 +82,7 @@ export default function AddProduct() {
                     maxFiles={3}
                     server="/api"
                     name="files" /* sets the file input name, it's filepond by default */
-                    labelIdle='Drag & Drop your file here or click '
+                    labelIdle="Drag & Drop your file here or click "
                   />
                 </Col>
               </Row>
@@ -85,18 +91,26 @@ export default function AddProduct() {
               <Row>
                 <Col md={3}></Col>
                 <Col md={9}>
-                  <Button variant='primary' to="#" className="btn btn-primary me-1">Add Product</Button>
-                  <Button variant='light' to="#" className="btn btn-light float-end">Discard</Button>
+                  <Button
+                    variant="primary"
+                    to="#"
+                    className="btn btn-primary me-1"
+                  >
+                    Add Product
+                  </Button>
+                  <Button
+                    variant="light"
+                    to="#"
+                    className="btn btn-light float-end"
+                  >
+                    Discard
+                  </Button>
                 </Col>
               </Row>
-
             </Card.Footer>
           </Card>
         </Col>
       </Row>
-
-
-
     </Fragment>
-  )
+  );
 }
