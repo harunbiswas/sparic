@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { imagesData } from "../../../common/commomimages/imagedata";
-import { Country, Recent, Timeline } from "./salesdata/chartsdata";
+import Recent from "./salesdata/chartsdata";
 
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Pageheader from "../../../layouts/pageheader/pageheader";
@@ -248,48 +248,6 @@ export default function Sales() {
                 </Card.Body>
               </Col>
             </Row>
-          </Card>
-          <Card className="card overflow-hidden">
-            <Timeline />
-          </Card>
-        </Col>
-        <Col xxl={5} lg={12} col={12}>
-          <Card className="card d-inline-block overflow-hidden">
-            <Card.Header className="card-header border-bottom">
-              <Card.Title className="card-title mb-0">
-                Sales Country Wise
-              </Card.Title>
-            </Card.Header>
-            <Card.Body className="card-body pb-0">
-              <div id="sales-country-wise"></div>
-              <Country />
-            </Card.Body>
-            <Card.Footer className="card-footer py-0">
-              <Row className="row">
-                <div className="col-6 border-end">
-                  <div className="text-body fw-semibold fs-12 text-center mt-3">
-                    Monthly Average
-                  </div>
-                  <div className="d-flex justify-content-center align-items-center mb-3">
-                    <span className="me-3 fs-20 fw-semibold">2,186</span>
-                    <span className="text-success fw-semibold mt-1">
-                      <i className="fa fa-caret-up me-1"></i>0.48%
-                    </span>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="text-body fw-semibold fs-12 text-center mt-3">
-                    Weekly Average
-                  </div>
-                  <div className="d-flex justify-content-center align-items-center mb-3">
-                    <span className="me-3 fs-20 fw-semibold">1,068</span>
-                    <span className="text-danger fw-semibold mt-1">
-                      <i className="fa fa-caret-down me-1"></i>0.20%
-                    </span>
-                  </div>
-                </div>
-              </Row>
-            </Card.Footer>
           </Card>
         </Col>
       </Row>
@@ -570,12 +528,12 @@ export default function Sales() {
         <Col xxl={3} xl={6} lg={12} md={12}>
           <Card>
             <Card.Header className=" border-bottom">
-              <Card.Title className=" mb-0">Recent Orders</Card.Title>
+              <Card.Title className=" mb-0">Social Platforms</Card.Title>
             </Card.Header>
             <Card.Body className=" px-0">
               <Recent />
             </Card.Body>
-            <Card.Footer>
+            {/* <Card.Footer>
               <Row className=" pb-0 mb-0">
                 <Col
                   md={6}
@@ -593,7 +551,7 @@ export default function Sales() {
                   <h4 className="mb-0 fw-semibold">$4,026</h4>
                 </Col>
               </Row>
-            </Card.Footer>
+            </Card.Footer> */}
           </Card>
         </Col>
       </Row>
