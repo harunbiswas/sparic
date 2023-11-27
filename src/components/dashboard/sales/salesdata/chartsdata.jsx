@@ -8,7 +8,14 @@ export default function Recent() {
   const [data, setData] = useState({
     series: [55, 78, 35, 35, 10],
     options: {
-      labels: ["Facebook", "Instagram", "Twitter", "Discord", "Slack"],
+      labels: [
+        "Discord",
+        "Facebook",
+        "Instagram",
+        "Slack",
+        "Twitch",
+        "Twitter",
+      ],
       chart: {
         height: 350,
         type: "donut",
@@ -76,7 +83,19 @@ export default function Recent() {
     axios
       .get(`${values.url}/socialplatforms`)
       .then((d) => {
-        console.log(d.data);
+        setData((prev) => {
+          return {
+            ...prev,
+            series: [
+              d.data[0]?.Discord,
+              d.data[0]?.Facebook,
+              d.data[0]?.Instagram,
+              d.data[0]?.Slack,
+              d.data[0]?.Twitch,
+              d.data[0]?.Twitter,
+            ],
+          };
+        });
       })
       .catch((e) => {
         console.log(e);
