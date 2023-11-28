@@ -4,6 +4,8 @@ import ReactApexChart from "react-apexcharts";
 import "react-data-table-component-extensions/dist/index.css";
 import values from "../../../../values";
 
+// Recent Orders
+
 export default function Recent() {
   const [data, setData] = useState({
     series: [55, 78, 35, 35, 10],

@@ -10,7 +10,6 @@ import Header from "./header/header";
 import Rightsidebar from "./rightsidebar/rightsidebar";
 import Sidebar from "./sidebar/sidebar";
 import Switcher from "./switcher/switcher";
-import Newsticker from "./ticker/newsticker";
 
 const Togglefuction = () => {
   document.querySelector(".app")?.classList.remove("sidenav-toggled");
@@ -29,7 +28,6 @@ function App() {
           <div className="page">
             <div className="page-main">
               <Header />
-              <Newsticker />
               <Sidebar />
               <div
                 className="main-content app-content"

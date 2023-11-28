@@ -19,7 +19,7 @@ export default function LiveFeed() {
   return (
     <Card className="d-inline-block overflow-hidden">
       <Card.Header className="custom-header">
-        <Card.Title className=" mb-0">Popular Products</Card.Title>
+        <Card.Title className=" mb-0">Live Feed</Card.Title>
       </Card.Header>
       <Card.Body className=" overflow-hidden p-0">
         <div className="table-responsive">

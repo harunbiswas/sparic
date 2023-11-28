@@ -43772,3 +43772,8 @@ body.dark-mode.body-style1 footer.footer {
 
 /***********dark menu styles****************/
 /*# sourceMappingURL=style.css.map */
+
+
+.app-content {
+    margin-block-start: 0px !important;
+  }

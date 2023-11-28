@@ -20,8 +20,7 @@ License Details                :   https://spruko.com/licenses-details
 // custom font-family
 
 //nunito
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
 
 @import "variables";
 
@@ -179,3 +178,7 @@ License Details                :   https://spruko.com/licenses-details
 @import "switcher-styles/style-dark";
 @import "switcher-styles/rtl";
 @import "switcher-styles/switcher-styles";
+
+.app-content {
+  margin-block-start: 0px !important;
+}
