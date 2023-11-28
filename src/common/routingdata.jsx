@@ -221,9 +221,7 @@ const LeafletMaps = React.lazy(() =>
 const SimpleMaps = React.lazy(() =>
   import("../components/maps/simplemaps/simplemaps")
 );
-const ChartJS = React.lazy(() =>
-  import("../components/charts/chartjs/chartjs")
-);
+
 const ECharts = React.lazy(() =>
   import("../components/charts/echarts/echarts")
 );
@@ -565,7 +563,6 @@ export const Routingdata = [
 
   /* Charts */
 
-  { path: `${import.meta.env.BASE_URL}charts/chartjs`, element: <ChartJS /> },
   { path: `${import.meta.env.BASE_URL}charts/echarts`, element: <ECharts /> },
   {
     path: `${import.meta.env.BASE_URL}charts/apexcharts`,
